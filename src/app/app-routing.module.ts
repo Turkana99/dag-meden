@@ -7,22 +7,23 @@ const routes: Routes = [
   {
     path: '',
     pathMatch: 'full',
-    redirectTo: 'login'
+    redirectTo: 'login',
   },
   {
     path: '',
-    loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule),
-    canActivate: [AuthGuard]
+    loadChildren: () => import('./auth/auth.module').then((m) => m.AuthModule),
+    canActivate: [AuthGuard],
   },
   {
     path: '',
-    loadChildren: () => import('./cabinet/cabinet.module').then(m => m.CabinetModule),
-    canActivate: [CabinetGuard]
+    loadChildren: () =>
+      import('./cabinet/cabinet.module').then((m) => m.CabinetModule),
+    canActivate: [CabinetGuard],
   },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

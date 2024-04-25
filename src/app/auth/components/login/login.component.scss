@@ -1,0 +1,57 @@
+.login {
+  height: 100%;
+}
+.left {
+  height: 100%;
+  color: white;
+  background-image: url(../../../../assets/images/bgLogin.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  h1 {
+    font-size: 50px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 900;
+    font-style: normal;
+    line-height: 60px !important;
+    letter-spacing: 2px;
+  }
+  p {
+    font-size: 16px;
+    font-family: "Poppins", sans-serif;
+  }
+}
+
+.right {
+  width: 50%;
+  h2 {
+    font-size: 30px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 900;
+    font-style: normal;
+    color: #464255;
+    text-align: center;
+  }
+  .login-form {
+    width: 100%;
+    ::ng-deep .p-input-icon-left,
+    ::ng-deep .p-inputtext,
+    ::ng-deep .p-button {
+      width: 100%;
+      font-size: 16px !important;
+      font-family: "Poppins", sans-serif;
+      color: black;
+    }
+    ::ng-deep .p-button {
+      color: white;
+      border-radius: 6px;
+      font-weight: 400px!important;
+    }
+    //Input placeholder
+    input::placeholder,
+    ::ng-deep .p-password-input::placeholder {
+      color: gray;
+      font-size: 14px; 
+      font-family: "Poppins", sans-serif!important;
+    }
+  }
+}
