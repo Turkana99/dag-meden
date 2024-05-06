@@ -7,11 +7,15 @@ import { InputTextModule } from 'primeng/inputtext';
 import { ButtonModule } from 'primeng/button';
 import { PasswordModule } from 'primeng/password';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ResetPasswordComponent } from '../dialogs/reset-password/reset-password.component';
+import { ToastModule } from 'primeng/toast';
+import { MaterialModule } from '../material.module';
 
 @NgModule({
   declarations: [
     AuthComponent, 
-    LoginComponent
+    LoginComponent,
+    ResetPasswordComponent
 ],
   imports: [
     CommonModule,
@@ -20,7 +24,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     ReactiveFormsModule,
     InputTextModule,
     ButtonModule,
-    PasswordModule
+    PasswordModule,
+    ToastModule,
+    MaterialModule
 ],
   providers: [],
 })

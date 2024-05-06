@@ -2,6 +2,13 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CabinetComponent } from './cabinet.component';
 import { MainComponent } from './components/main/main.component';
+import { SearchComponent } from './components/search/search.component';
+import { LegalIndividualPersonComponent } from './components/legal-individual-person/legal-individual-person.component';
+import { DangerObjectsComponent } from './components/danger-objects/danger-objects.component';
+import { FeauturesComponent } from './components/feautures/feautures.component';
+import { DocumentsComponent } from './components/documents/documents.component';
+import { StatisticsComponent } from './components/statistics/statistics.component';
+import { SettingsComponent } from './components/settings/settings.component';
 
 const routes: Routes = [
   {
@@ -16,6 +23,28 @@ const routes: Routes = [
       {
         path: 'main',
         component: MainComponent,
+      },
+      {
+        path: 'search',
+        component: SearchComponent,
+      }, {
+        path: 'legal-individual-person',
+        component: LegalIndividualPersonComponent,
+      }, {
+        path: 'danger-objects',
+        component: DangerObjectsComponent,
+      }, {
+        path: 'features',
+        component: FeauturesComponent,
+      }, {
+        path: 'documents',
+        component: DocumentsComponent,
+      }, {
+        path: 'statistics',
+        component: StatisticsComponent,
+      }, {
+        path: 'settings',
+        component: SettingsComponent,
       },
     ],
   },

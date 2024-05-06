@@ -3,7 +3,7 @@
 @import "primeng/resources/primeng.css";
 
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; background-color: #F3F2F7; }
 
 
 .poppins-thin {
@@ -59,5 +59,13 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     font-weight: 900;
     font-style: normal;
   }
+
+  .validationMessage{
+    color: red;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+  }
   
   
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
