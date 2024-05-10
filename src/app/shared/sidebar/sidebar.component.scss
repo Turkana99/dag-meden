@@ -1,12 +1,13 @@
 @import "../../../styles/variables.scss";
 
+//Sidebar active
 .sidebar.active {
   background-color: white !important;
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
   z-index: 1000;
   position: fixed;
   overflow: hidden;
-  min-width: 330px;
+  min-width: 340px;
   transition: min-width 300ms;
   height: 100%;
   font-family: "Poppins", sans-serif;
@@ -57,6 +58,17 @@
       transition: 00ms;
     }
   }
+  .dropdown {
+    padding-left: 53px;
+    li {
+      font-size: 14px;
+      padding: 6px 0px;
+      list-style-type: disc;
+    }
+    li:hover {
+      color: $main-color;
+    }
+  }
   li > div:first-child {
     display: flex;
     justify-content: center;
@@ -72,7 +84,7 @@
   }
   li > div:last-child {
     padding: 0;
-    font-size: 14px;
+    font-size: 15px;
     white-space: nowrap;
     overflow: hidden;
     transition: background-color 200ms, padding 200ms, width 200ms;
@@ -80,13 +92,38 @@
   .second {
     display: none;
   }
+  .mat-expansion-panel:not([class*="mat-elevation-z"]) {
+    box-shadow: none;
+    border-radius: 8px;
+  }
+  ::ng-deep .mat-expansion-panel-header-title{
+    font-size: 15px;
+    font-weight: 400;
+    font-family: "Poppins", sans-serif;
+  }
+  ::ng-deep .mat-expansion-panel:hover {
+    background-color: $sidebar-hover;
+    ::ng-deep .mat-expansion-panel-header-title {
+      color: $main-color;
+      font-weight: 400;
+      i {
+        color: $main-color;
+      }
+      .second {
+        display: block;
+      }
+      .first {
+        display: none;
+      }
+    }
+  }
   .router-link-active {
     font-weight: bold !important;
     outline: none;
     color: $main-color;
-    .bg-hover {
-      background-color: $sidebar-hover !important;
-    }
+    // .bg-hover {
+    //   background-color: $sidebar-hover !important;
+    // }
     .second {
       display: block;
     }
@@ -97,8 +134,38 @@
       visibility: visible;
     }
   }
+  .router-link-active2 {
+    .second {
+      display: block;
+    }
+    .first {
+      display: none;
+    }
+    .line {
+      visibility: visible;
+    }
+    ::ng-deep .mat-expansion-panel-header-title {
+      color: $main-color;
+      font-weight: bold;
+    }
+    // .mat-expansion-panel:not([class*="mat-elevation-z"]) {
+    //   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    // }
+  }
+  .router-link-activeLi {
+      color: $main-color;
+  }
+  .collapse {
+    ul {
+      list-style-type: disc;
+      color: black;
+      font-weight: normal;
+      padding: 0px 100px 0px 100px;
+    }
+  }
 }
 
+//Sidebar not active
 .sidebar:not(.active) {
   svg {
     margin-left: 20px;
@@ -151,6 +218,7 @@
   }
   .sd-text {
     display: none;
+    text-decoration: none;
   }
   li > div:first-child {
     display: flex;
@@ -175,13 +243,36 @@
     display: none;
     transition: display 300ms;
   }
+  .mat-expansion-panel:not([class*="mat-elevation-z"]) {
+    box-shadow: none;
+    border-radius: 8px;
+  }
+  ::ng-deep .mat-expansion-panel:hover {
+    background-color: $sidebar-hover;
+    ::ng-deep .mat-expansion-panel-header-title {
+      color: $main-color;
+      font-weight: 400;
+      i {
+        color: $main-color;
+      }
+      .second {
+        display: block;
+      }
+      .first {
+        display: none;
+      }
+    }
+  }
   .router-link-active {
     font-weight: bold !important;
     outline: none;
     color: $main-color;
-    .bg-hover {
-      background-color: $sidebar-hover !important;
+    a {
+      text-decoration: none !important;
     }
+    // .bg-hover {
+    //   background-color: $sidebar-hover !important;
+    // }
     .second {
       display: block;
     }
@@ -192,6 +283,24 @@
       visibility: visible;
     }
   }
+  .router-link-active2 {
+    .second {
+      display: block;
+    }
+    .first {
+      display: none;
+    }
+    .line {
+      visibility: visible;
+    }
+    ::ng-deep .mat-expansion-panel-header-title {
+      color: $main-color;
+      font-weight: bold;
+    }
+    // .mat-expansion-panel:not([class*="mat-elevation-z"]) {
+    //   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    // }
+  }
   .collapse {
     &:not(.show) {
       display: none;
@@ -200,5 +309,8 @@
   .collapsing {
     height: 0;
     overflow: hidden;
+  }
+  .collapse {
+    transition: height 0.5s ease; /* Adjust the duration and timing function as needed */
   }
 }

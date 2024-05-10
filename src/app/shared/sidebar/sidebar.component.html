@@ -50,9 +50,9 @@
           [routerLinkActiveOptions]="{ exact: true }"
           routerLinkActive="router-link-active"
         >
-          <div class="d-flex justify-content-center w-100">
+          <div class="w-100 p-0 m-0 d-flex justify-content-center">
             <div class="line me-3">&nbsp;&nbsp;</div>
-            <div class="w-100 p-0 m-0 d-flex bg-hover py-3 px-4">
+            <div class="w-100 d-flex bg-hover py-3 px-4">
               <div class="d-flex images">
                 <img src="../../../assets/images/home.svg" class="first ms-1" />
                 <img
@@ -151,18 +151,20 @@
           </div>
         </li>
         <!--Documents-->
-        <li
+        <!-- <li
           class="dropdown"
           routerLink="documents"
           [routerLinkActiveOptions]="{ exact: true }"
           routerLinkActive="router-link-active"
         >
           <a
+            class="collapseHref"
             data-bs-toggle="collapse"
             href="#collapseExample"
             role="button"
             aria-expanded="false"
             aria-controls="collapseExample"
+            style="text-decoration: none; transition: 200ms"
           >
             <div class="d-flex justify-content-center w-100 py-1">
               <div class="line me-3">&nbsp;&nbsp;</div>
@@ -174,32 +176,50 @@
                     class="second"
                   />
                 </div>
-                <div class="flex-fill px-2 sd-text">Sənədlər</div>
+                <div class="d-flex justify-content-between flex-fill px-2">
+                  <div class="sd-text">Sənəd növləri</div>
+                  <div>
+                    <i class="fa-solid fa-caret-down"></i>
+                  </div>
+                </div>
               </div>
             </div>
           </a>
           <div class="collapse" id="collapseExample">
             <ul>
+              <li>Reyestr qeydiyyatı</li>
+              <li>Sertifikat</li>
               <li>Bəyannamə</li>
+              <li>Lisenziya</li>
+              <li>Qaz layihələri</li>
+              <li>Ekspertiza rəyi</li>
+              <li>Xüsusi icazə</li>
+              <li>Nəqliyyat vasitələri</li>
             </ul>
           </div>
-        </li>
+        </li> -->
 
         <!--Documents-->
-        <!-- <li
-          class="d-flex dropdown"
+        <li
+          class="d-flex w-100"
           routerLink="documents"
           [routerLinkActiveOptions]="{ exact: true }"
-          routerLinkActive="router-link-active"
+          routerLinkActive="router-link-active2"
         >
-          <div class="d-flex justify-content-center w-100 py-1">
-            <p-accordion [multiple]="true">
-              <p-accordionTab>
-                <ng-template pTemplate="header">
-                  <div class="accordion-header">
-                    <div class="line me-3">&nbsp;&nbsp;</div>
-                    <div class="w-100 p-0 m-0 d-flex bg-hover py-3 px-4">
-                      <div class="d-flex images">
+          <div
+            class="w-100 d-flex justify-content-center py-1"
+            style="width: 100%"
+          >
+            <div class="line me-3">&nbsp;&nbsp;</div>
+            <mat-accordion class="w-100">
+              <mat-expansion-panel
+                (opened)="panelOpenState = true"
+                (closed)="panelOpenState = false"
+              >
+                <mat-expansion-panel-header class="p-0 w-100 pe-3">
+                  <mat-panel-title>
+                    <div class="w-100 d-flex align-items-center py-3 px-4">
+                      <div class="d-flex images p-0 m-0">
                         <img
                           src="../../../assets/images/docs.svg"
                           class="first"
@@ -209,16 +229,37 @@
                           class="second"
                         />
                       </div>
-                      <div class="flex-fill px-2">Sənədlər</div>
+                      <div
+                        class="d-flex justify-content-between flex-fill px-2"
+                      >
+                        Sənəd növləri
+                      </div>
                     </div>
-                  </div>
-                </ng-template> -->
-        <!-- Accordion content goes here -->
-        <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-              </p-accordionTab>
-            </p-accordion>
+                  </mat-panel-title>
+                  <!-- <mat-panel-description>
+                  Currently I am {{ panelOpenState ? "open" : "closed" }}
+                </mat-panel-description> -->
+                </mat-expansion-panel-header>
+                <ul class="dropdown">
+                  <li
+                    routerLink="documents"
+                    [routerLinkActiveOptions]="{ exact: true }"
+                    routerLinkActive="router-link-activeLi"
+                  >
+                    Reyestr qeydiyyatı
+                  </li>
+                  <li>Sertifikat</li>
+                  <li>Bəyannamə</li>
+                  <li>Lisenziya</li>
+                  <li>Qaz layihələri</li>
+                  <li>Ekspertiza rəyi</li>
+                  <li>Xüsusi icazə</li>
+                  <li>Nəqliyyat vasitələri</li>
+                </ul>
+              </mat-expansion-panel>
+            </mat-accordion>
           </div>
-        </li> -->
+        </li>
 
         <!--Statistics-->
         <li

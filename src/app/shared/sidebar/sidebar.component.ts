@@ -9,6 +9,7 @@ import { log } from 'console';
 })
 export class SidebarComponent implements OnInit {
   minimizeSidebar = false;
+  panelOpenState = false;
   constructor(private sharedService: SharedService) {}
   ngOnInit(): void {
     this.onSidebarToggle();
