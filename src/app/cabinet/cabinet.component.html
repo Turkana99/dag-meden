@@ -1,7 +1,7 @@
 <div class="main-content d-flex flex-column">
     <div class="content d-flex">
       <app-sidebar></app-sidebar>
-      <div class="d-flex flex-column"  [ngClass]="!minimizeSidebar ? 'left-side1' : 'left-side2'">
+      <div class="content-wrapper d-flex flex-column" [ngClass]="!minimizeSidebar ? 'left-side1' : 'left-side2'">
         <app-header></app-header>
         <div class="chg-content">
           <router-outlet></router-outlet>

@@ -2,15 +2,18 @@
   gap: 10px;
 }
 .content {
-  min-height: 100vh;
   gap: 10px;
+}
+.content-wrapper {
+  overflow-y: none;
 }
 .chg-content {
   z-index: 2;
-  height: calc(100vh - 134px);
+  height: calc(100vh - 146px);
   border-radius: 10px;
   background-color: white;
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  overflow-y: none;
 }
 ::ng-deep .chg-content > :nth-child(2) {
   display: flex;
@@ -23,16 +26,16 @@
 .left-side1 {
   width: 100%;
   gap: 10px;
-  margin-left: 330px;
+  margin-left: 340px;
   padding: 0 10px;
-  overflow-y: hidden;
   transition: margin-left 300ms;
+  overflow-y: none !important;
 }
 .left-side2 {
-    width: 100%;
-    gap: 10px;
-    padding: 0 10px;
-    overflow-y: hidden;
-    margin-left: 100px;
-    transition: margin-left 300ms;
+  width: 100%;
+  gap: 10px;
+  padding: 0 10px;
+  margin-left: 100px;
+  transition: margin-left 300ms;
+  overflow-y: none !important;
 }

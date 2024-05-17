@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { MaterialModule } from './material.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { TooltipModule } from 'primeng/tooltip';
 
 @NgModule({
   declarations: [AppComponent],
@@ -13,7 +14,8 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
     AppRoutingModule,
     MaterialModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    TooltipModule
   ],
   providers: [
     provideAnimationsAsync()

@@ -16,6 +16,12 @@ import { InputTextModule } from 'primeng/inputtext';
 import { AccordionModule } from 'primeng/accordion';
 import { AppRoutingModule } from '../app-routing.module';
 import { SidebarResComponent } from '../shared/sidebar-res/sidebar-res.component';
+import { NgApexchartsModule } from "ng-apexcharts";
+import { Charts1Component } from './components/charts/charts1/charts1.component';
+import { Chart2Component } from './components/charts/chart2/chart2.component';
+import { ChartModule } from 'primeng/chart';
+import { RegisterDocsComponent } from './components/register-docs/register-docs.component';
+import { LegalIndividualPersonComponent } from './components/legal-individual-person/legal-individual-person.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +30,11 @@ import { SidebarResComponent } from '../shared/sidebar-res/sidebar-res.component
     SidebarComponent,
     HeaderComponent,
     FooterComponent,
-    SidebarResComponent
+    SidebarResComponent,
+    Chart2Component,
+    Charts1Component,
+    RegisterDocsComponent,
+    LegalIndividualPersonComponent
   ],
   imports: [
     CommonModule,
@@ -34,7 +44,9 @@ import { SidebarResComponent } from '../shared/sidebar-res/sidebar-res.component
     MaterialModule,
     MatMenuModule,
     InputTextModule,
-    AccordionModule
+    AccordionModule,
+    NgApexchartsModule,
+    ChartModule
   ],
   providers: [
     

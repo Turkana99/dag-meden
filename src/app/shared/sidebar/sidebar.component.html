@@ -54,10 +54,15 @@
             <div class="line me-3">&nbsp;&nbsp;</div>
             <div class="w-100 d-flex bg-hover py-3 px-4">
               <div class="d-flex images">
-                <img src="../../../assets/images/home.svg" class="first ms-1" />
+                <img
+                  src="../../../assets/images/home.svg"
+                  class="first ms-1"
+                  title="Ana səhifə"
+                />
                 <img
                   src="../../../assets/images/homeBlue.svg"
                   class="second ms-1"
+                  title="Ana səhifə"
                 />
               </div>
               <div class="flex-fill px-2 sd-text">Ana səhifə</div>
@@ -75,10 +80,15 @@
             <div class="line me-3">&nbsp;&nbsp;</div>
             <div class="w-100 p-0 m-0 d-flex bg-hover py-3 px-4">
               <div class="d-flex images">
-                <img src="../../../assets/images/search.svg" class="first" />
+                <img
+                  src="../../../assets/images/search.svg"
+                  class="first"
+                  title="Axtarış"
+                />
                 <img
                   src="../../../assets/images/searchBlue.svg"
                   class="second"
+                  title="Axtarış"
                 />
               </div>
               <div class="flex-fill px-2 sd-text">Axtarış</div>
@@ -96,10 +106,15 @@
             <div class="line me-3">&nbsp;&nbsp;</div>
             <div class="w-100 p-0 m-0 d-flex bg-hover py-3 px-4">
               <div class="d-flex images">
-                <img src="../../../assets/images/users.svg" class="first" />
+                <img
+                  src="../../../assets/images/users.svg"
+                  class="first"
+                  title="Fiziki/Hüquqi şəxslər"
+                />
                 <img
                   src="../../../assets/images/usersBlue.svg"
                   class="second"
+                  title="Fiziki/Hüquqi şəxslər"
                 />
               </div>
               <div class="flex-fill px-2 sd-text">Fiziki/Hüquqi şəxslər</div>
@@ -117,10 +132,15 @@
             <div class="line me-3">&nbsp;&nbsp;</div>
             <div class="w-100 p-0 m-0 d-flex bg-hover py-3 px-4">
               <div class="d-flex images">
-                <img src="../../../assets/images/building.svg" class="first" />
+                <img
+                  src="../../../assets/images/building.svg"
+                  class="first"
+                  title="Təhlükə potensiallı obyekt"
+                />
                 <img
                   src="../../../assets/images/buildingBlue.svg"
                   class="second"
+                  title="Təhlükə potensiallı obyekt"
                 />
               </div>
               <div class="flex-fill px-2 sd-text">
@@ -140,10 +160,15 @@
             <div class="line me-3">&nbsp;&nbsp;</div>
             <div class="w-100 p-0 m-0 d-flex bg-hover py-3 px-4">
               <div class="d-flex images">
-                <img src="../../../assets/images/features.svg" class="first" />
+                <img
+                  src="../../../assets/images/features.svg"
+                  class="first"
+                  title="Qurğu və avadanlıqlar"
+                />
                 <img
                   src="../../../assets/images/featuresBlue.svg"
                   class="second"
+                  title="Qurğu və avadanlıqlar"
                 />
               </div>
               <div class="flex-fill px-2 sd-text">Qurğu və avadanlıqlar</div>
@@ -211,28 +236,34 @@
             style="width: 100%"
           >
             <div class="line me-3">&nbsp;&nbsp;</div>
-            <mat-accordion class="w-100">
+            <mat-accordion class="w-100 m-0 p-0">
               <mat-expansion-panel
+                class="p-0 m-0"
                 (opened)="panelOpenState = true"
                 (closed)="panelOpenState = false"
+                [disabled]="minimizeSidebar"
               >
-                <mat-expansion-panel-header class="p-0 w-100 pe-3">
-                  <mat-panel-title>
-                    <div class="w-100 d-flex align-items-center py-3 px-4">
-                      <div class="d-flex images p-0 m-0">
+                <mat-expansion-panel-header class="m-0 p-0 w-100 pe-3">
+                  <mat-panel-title class="m-0 p-0">
+                    <div class="w-100 d-flex align-items-center">
+                      <div class="d-flex images px-4 m-0">
                         <img
                           src="../../../assets/images/docs.svg"
                           class="first"
+                          title="Sənəd növləri"
                         />
                         <img
                           src="../../../assets/images/docsBlue.svg"
                           class="second"
+                          title="Sənəd növləri"
                         />
                       </div>
                       <div
-                        class="d-flex justify-content-between flex-fill px-2"
+                        class="title d-flex justify-content-between align-items-center px-2"
                       >
-                        Sənəd növləri
+                        <p class="d-flex align-items-center ps-2">
+                          Sənəd növləri
+                        </p>
                       </div>
                     </div>
                   </mat-panel-title>
@@ -275,10 +306,12 @@
                 <img
                   src="../../../assets/images/statistics.svg"
                   class="first"
+                  title="Statistika"
                 />
                 <img
                   src="../../../assets/images/statisticBlue.svg"
                   class="second"
+                  title="Statistika"
                 />
               </div>
               <div class="flex-fill px-2 sd-text">Statistika</div>
@@ -296,10 +329,17 @@
             <div class="line me-3">&nbsp;&nbsp;</div>
             <div class="w-100 p-0 m-0 d-flex bg-hover py-3 px-4">
               <div class="d-flex images">
-                <img src="../../../assets/images/settings.svg" class="first" />
+                <img
+                  src="../../../assets/images/settings.svg"
+                  class="first"
+                  pTooltip="Parametrlər"
+                  tooltipPosition="right"
+                />
                 <img
                   src="../../../assets/images/settingsBlue.svg"
                   class="second"
+                  pTooltip="Parametrlər"
+                  tooltipPosition="right"
                 />
               </div>
               <div class="flex-fill px-2 sd-text">Parametrlər</div>
