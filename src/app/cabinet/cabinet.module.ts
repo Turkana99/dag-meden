@@ -22,6 +22,10 @@ import { Chart2Component } from './components/charts/chart2/chart2.component';
 import { ChartModule } from 'primeng/chart';
 import { RegisterDocsComponent } from './components/register-docs/register-docs.component';
 import { LegalIndividualPersonComponent } from './components/legal-individual-person/legal-individual-person.component';
+import { NewIndividualPersonComponent } from './components/new-individual-person/new-individual-person.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { DropdownModule } from 'primeng/dropdown';
+import { RadioButtonModule } from 'primeng/radiobutton';
 
 @NgModule({
   declarations: [
@@ -34,7 +38,8 @@ import { LegalIndividualPersonComponent } from './components/legal-individual-pe
     Chart2Component,
     Charts1Component,
     RegisterDocsComponent,
-    LegalIndividualPersonComponent
+    LegalIndividualPersonComponent,
+    NewIndividualPersonComponent
   ],
   imports: [
     CommonModule,
@@ -46,7 +51,11 @@ import { LegalIndividualPersonComponent } from './components/legal-individual-pe
     InputTextModule,
     AccordionModule,
     NgApexchartsModule,
-    ChartModule
+    ChartModule,
+    FormsModule,
+    ReactiveFormsModule,
+    DropdownModule,
+    RadioButtonModule
   ],
   providers: [
     

@@ -9,7 +9,7 @@ import { FeauturesComponent } from './components/feautures/feautures.component';
 import { StatisticsComponent } from './components/statistics/statistics.component';
 import { SettingsComponent } from './components/settings/settings.component';
 import { RegisterDocsComponent } from './components/register-docs/register-docs.component';
-
+import { NewIndividualPersonComponent } from './components/new-individual-person/new-individual-person.component';
 const routes: Routes = [
   {
     path: '',
@@ -51,6 +51,10 @@ const routes: Routes = [
       {
         path: 'settings',
         component: SettingsComponent,
+      },
+      {
+        path: 'new-individual-person',
+        component: NewIndividualPersonComponent,
       },
     ],
   },
