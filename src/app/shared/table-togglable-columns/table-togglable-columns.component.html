@@ -1,0 +1,21 @@
+<mat-table [dataSource]="dataSource">
+  <!-- Position Column -->
+  @for (item of filteredColumns; track $index) {
+  <ng-container [matColumnDef]="item.key">
+    <mat-header-cell *matHeaderCellDef class="ps-2 pe-1">
+      {{ item.name | titlecase }}
+      <div class="filter-form-wrapper" >
+        <input type="text" pInputText class="w-100" />
+        @if ($index == filteredColumns.length - 1 ) {
+        <button mat-icon-button (click)="openDialog()">
+          <mat-icon>more_vert</mat-icon>
+        </button>
+        }
+      </div>
+    </mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{ element[item.key] }} </mat-cell>
+  </ng-container>
+  }
+  <mat-header-row *matHeaderRowDef="filteredColumnKeys"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: filteredColumnKeys"></mat-row>
+</mat-table>

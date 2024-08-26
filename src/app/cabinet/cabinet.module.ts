@@ -33,6 +33,8 @@ import { CheckboxModule } from 'primeng/checkbox';
 import { MultiSelectModule } from 'primeng/multiselect';
 import { CalendarModule } from 'primeng/calendar';
 import { InputTextareaModule } from 'primeng/inputtextarea';
+import { TableTogglableColumnsComponent } from '../shared/table-togglable-columns/table-togglable-columns.component';
+import { TableMenuDialogComponent } from '../dialogs/table-menu-dialog/table-menu-dialog.component';
 
 @NgModule({
   declarations: [
@@ -48,6 +50,8 @@ import { InputTextareaModule } from 'primeng/inputtextarea';
     LegalIndividualPersonComponent,
     NewIndividualPersonComponent,
     TestComponent,
+    TableTogglableColumnsComponent,
+    TableMenuDialogComponent
   ],
   imports: [
     CommonModule,

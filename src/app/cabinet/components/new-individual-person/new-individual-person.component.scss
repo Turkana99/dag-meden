@@ -43,8 +43,18 @@
     font-size: 12px;
   }
   .address_info {
-    border: 1px solid #E1EEFC;
-
-    border-radius:8px; 
+    border: 1px solid #e1eefc;
+    border-radius: 8px;
+    margin-left: 4px !important;
+  }
+  .send {
+    button {
+      background-color: $main-color !important;
+      color: white !important;
+      border: 1px solid $main-color !important;
+      border-radius: 8px !important;
+      padding: 6px 20px;
+      font-size: 12px;
+    }
   }
 }

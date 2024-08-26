@@ -1,0 +1,48 @@
+@import "../../../styles/variables.scss";
+
+mat-header-cell {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding-top: 15px;
+  padding-bottom: 10px;
+  border-bottom: none !important;
+  background-color: $table-header !important;
+  font-size: 13px !important;
+  text-align: center !important;
+  font-weight: 700 !important;
+  color: white !important;
+  line-height: 20px !important;
+  &:first-child {
+    border-top-left-radius: 10px !important;
+  }
+  &:last-child {
+    border-top-right-radius: 10px;
+  }
+  .filter-form-wrapper {
+    width: 100%;
+    display: flex;
+    gap: 20px;
+
+    mat-form-field {
+      width: 100%;
+      border-color: white!important;
+      input {
+        font-size: 16px;
+      }
+    }
+
+    ::ng-deep & .mat-mdc-text-field-wrapper {
+      display: flex;
+      height: 40px;
+      align-items: center;
+      color: white!important;
+    }
+  }
+}
+mat-header-cell:last-child {
+  display: flex;
+  justify-content: space-between;
+}
