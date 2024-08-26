@@ -16,7 +16,7 @@ import { InputTextModule } from 'primeng/inputtext';
 import { AccordionModule } from 'primeng/accordion';
 import { AppRoutingModule } from '../app-routing.module';
 import { SidebarResComponent } from '../shared/sidebar-res/sidebar-res.component';
-import { NgApexchartsModule } from "ng-apexcharts";
+import { NgApexchartsModule } from 'ng-apexcharts';
 import { Charts1Component } from './components/charts/charts1/charts1.component';
 import { Chart2Component } from './components/charts/chart2/chart2.component';
 import { ChartModule } from 'primeng/chart';
@@ -26,6 +26,13 @@ import { NewIndividualPersonComponent } from './components/new-individual-person
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DropdownModule } from 'primeng/dropdown';
 import { RadioButtonModule } from 'primeng/radiobutton';
+import { TestComponent } from './components/test/test.component';
+import { TableModule } from 'primeng/table';
+import { ToolbarModule } from 'primeng/toolbar';
+import { CheckboxModule } from 'primeng/checkbox';
+import { MultiSelectModule } from 'primeng/multiselect';
+import { CalendarModule } from 'primeng/calendar';
+import { InputTextareaModule } from 'primeng/inputtextarea';
 
 @NgModule({
   declarations: [
@@ -39,7 +46,8 @@ import { RadioButtonModule } from 'primeng/radiobutton';
     Charts1Component,
     RegisterDocsComponent,
     LegalIndividualPersonComponent,
-    NewIndividualPersonComponent
+    NewIndividualPersonComponent,
+    TestComponent,
   ],
   imports: [
     CommonModule,
@@ -48,6 +56,7 @@ import { RadioButtonModule } from 'primeng/radiobutton';
     ButtonModule,
     MaterialModule,
     MatMenuModule,
+    InputTextareaModule,
     InputTextModule,
     AccordionModule,
     NgApexchartsModule,
@@ -55,10 +64,14 @@ import { RadioButtonModule } from 'primeng/radiobutton';
     FormsModule,
     ReactiveFormsModule,
     DropdownModule,
-    RadioButtonModule
+    RadioButtonModule,
+    TableModule,
+    ToolbarModule,
+    CheckboxModule,
+    FormsModule,
+    MultiSelectModule,
+    CalendarModule
   ],
-  providers: [
-    
-  ],
+  providers: [],
 })
 export class CabinetModule {}

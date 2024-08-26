@@ -11,7 +11,11 @@ export class NewIndividualPersonComponent implements OnInit {
   legalPersonForm: any;
   selectedPerson: string = 'individual-person';
   numberType = [{ name: 'Otaq nömrəsi' }, { name: 'Faks' }];
-
+  inception =[{ name: 'Neft və qazçıxarma sənayesində işlərin təhlükəsiz görülməsinə nəzarət müfəttişliyi' }, { name: 'test2' }];
+  acType = [{ name: 'Əsas' }, { name: 'Digər' }];
+  acType2 = [{ name: 'Ali təhsil' }, { name: 'Aqrokimyəvi məhsulların istehsalı'}];
+  addType= [{ name: 'Qeydiyyat ünvanı' }, { name: 'Fakttiki yaşayış ünvanı'}];
+  cities = [{ name: 'Bakı' }, { name: 'Sumqayıt' }];
   constructor(private fb: FormBuilder) {}
 
   ngOnInit() {

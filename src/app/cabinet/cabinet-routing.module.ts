@@ -10,6 +10,7 @@ import { StatisticsComponent } from './components/statistics/statistics.componen
 import { SettingsComponent } from './components/settings/settings.component';
 import { RegisterDocsComponent } from './components/register-docs/register-docs.component';
 import { NewIndividualPersonComponent } from './components/new-individual-person/new-individual-person.component';
+import { TestComponent } from './components/test/test.component';
 const routes: Routes = [
   {
     path: '',
@@ -55,6 +56,10 @@ const routes: Routes = [
       {
         path: 'new-individual-person',
         component: NewIndividualPersonComponent,
+      },
+      {
+        path: 'test',
+        component: TestComponent,
       },
     ],
   },

@@ -1,152 +1,245 @@
 <div class="new-individual-person px-3">
-    <h1 class="pt-3">Yeni Hüquqi(Fiziki) şəxs əlavəsi</h1>
-    <div class="person-type">
-      <!--Radio Button-->
-      <div class="d-flex gap-3 pt-3">
-        <div class="d-flex align-items-center justify-content-center">
-          <p-radioButton
-            name="person"
-            value="individual-person"
-            inputId="person1"
-            [(ngModel)]="selectedPerson"
-          ></p-radioButton>
-          <label for="person1" class="ml-2 ps-2">Fiziki şəxs</label>
-        </div>
-  
-        <div class="d-flex align-items-center justify-content-center">
-          <p-radioButton
-            name="person"
-            value="legal-person"
-            inputId="person2"
-            [(ngModel)]="selectedPerson"
-          ></p-radioButton>
-          <label for="person2" class="ml-2 ps-2">Hüquqi şəxs</label>
-        </div>
+  <h1 class="pt-3">Yeni Hüquqi(Fiziki) şəxs əlavəsi</h1>
+  <div class="person-type">
+    <!--Radio Button-->
+    <div class="d-flex gap-3 pt-3">
+      <div class="d-flex align-items-center justify-content-center">
+        <p-radioButton
+          name="person"
+          value="individual-person"
+          inputId="person1"
+          [(ngModel)]="selectedPerson"
+        ></p-radioButton>
+        <label for="person1" class="ml-2 ps-2">Fiziki şəxs</label>
       </div>
-  
-      <!--Individual Forms-->
-      <div
-        *ngIf="selectedPerson === 'individual-person'"
-        class="individual-person pt-4"
-      >
-        <form [formGroup]="individualPersonForm">
-          <div class="row">
-            <div class="col-lg-6">
-              <div class="pe-5">
-                <!--FIN-->
-                <div class="pb-2">
-                  <label for="FIN" class="pb-1">FIN*</label>
-                  <div class="p-inputgroup">
-                    <input type="text" pInputText formControlName="fin" />
-                    <span class="p-inputgroup-addon">
-                      <i class="fa-solid fa-magnifying-glass"></i>
-                    </span>
-                  </div>
-                </div>
-  
-                <!--Name-->
-                <div class="pb-2">
-                  <label for="name" class="pb-1">Ad*</label>
-                  <div>
-                    <input type="text" pInputText />
-                  </div>
-                </div>
-  
-                <!--Surname-->
-                <div class="pb-2">
-                  <label for="name" class="pb-1">Soyad*</label>
-                  <div>
-                    <input type="text" pInputText />
-                  </div>
-                </div>
-  
-                <!--Dad name-->
-                <div class="pb-2">
-                  <label for="name" class="pb-1">Ata adı*</label>
-                  <div>
-                    <input type="text" pInputText />
-                  </div>
-                </div>
-  
-                <!--Voen-->
-                <div class="pb-2">
-                  <label for="name" class="pb-1">Vöen*</label>
-                  <div>
-                    <input type="text" pInputText />
-                  </div>
-                </div>
-                <!-- Number Type and Numbers -->
-                <div formArrayName="inputs">
-                  <div
-                    *ngFor="let input of inputs.controls; let i = index"
-                    [formGroupName]="i"
-                    class="pb-2"
-                  >
-                    <!-- Number Type -->
-                    <div class="pb-2">
-                      <label for="name" class="pb-1">Nömrə növləri*</label>
-                      <div class="flex justify-content-center">
-                        <p-dropdown
-                          [options]="numberType"
-                          optionLabel="name"
-                          formControlName="selectedType"
-                        >
-                        </p-dropdown>
-                      </div>
-                    </div>
-                    <!-- Numbers -->
-                    <div class="pb-2">
-                      <label for="">Nömrələr</label>
-                      <div class="p-field">
-                        <input type="text" pInputText formControlName="value" />
-                        <div class="d-flex justify-content-end">
-                          <button
-                            pButton
-                            type="button"
-                            icon="pi pi-minus"
-                            class="rmv-btn my-2"
-                            (click)="removeInput(i)"
-                            *ngIf="inputs.length > 1"
-                          >
-                            - Sil
-                          </button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <!-- Add Button -->
-                <div class="d-flex justify-content-end">
-                  <button
-                    pButton
-                    class="add-btn my-2"
-                    type="button"
-                    icon="pi pi-plus"
-                    (click)="addInput()"
-                  >
-                    + Yeni nömrə
-                  </button>
+
+      <div class="d-flex align-items-center justify-content-center">
+        <p-radioButton
+          name="person"
+          value="legal-person"
+          inputId="person2"
+          [(ngModel)]="selectedPerson"
+        ></p-radioButton>
+        <label for="person2" class="ml-2 ps-2">Hüquqi şəxs</label>
+      </div>
+    </div>
+
+    <!--Individual Forms-->
+    <div
+      *ngIf="selectedPerson === 'individual-person'"
+      class="individual-person pt-4"
+    >
+      <form [formGroup]="individualPersonForm">
+        <div class="row">
+          <div class="col-lg-6">
+            <div class="pe-5">
+              <!--FIN-->
+              <div class="pb-2">
+                <label for="FIN" class="pb-1">FIN*</label>
+                <div class="p-inputgroup">
+                  <input type="text" pInputText formControlName="fin" />
+                  <span class="p-inputgroup-addon">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                  </span>
                 </div>
               </div>
-            </div>
-            <div class="col-lg-6">
-              <div class="ps-5">
-                <!--Email-->
-                <div class="pb-2">
-                  <label for="name" class="pb-1">Elektron-poçt</label>
-                  <div>
-                    <input type="text" pInputText />
+
+              <!--Name-->
+              <div class="pb-2">
+                <label for="name" class="pb-1">Ad*</label>
+                <div>
+                  <input type="text" pInputText />
+                </div>
+              </div>
+
+              <!--Surname-->
+              <div class="pb-2">
+                <label for="name" class="pb-1">Soyad*</label>
+                <div>
+                  <input type="text" pInputText />
+                </div>
+              </div>
+
+              <!--Dad name-->
+              <div class="pb-2">
+                <label for="name" class="pb-1">Ata adı*</label>
+                <div>
+                  <input type="text" pInputText />
+                </div>
+              </div>
+
+              <!--Voen-->
+              <div class="pb-2">
+                <label for="name" class="pb-1">Vöen*</label>
+                <div>
+                  <input type="text" pInputText />
+                </div>
+              </div>
+              <!-- Number Type and Numbers -->
+              <div formArrayName="inputs">
+                <div
+                  *ngFor="let input of inputs.controls; let i = index"
+                  [formGroupName]="i"
+                  class="pb-2"
+                >
+                  <!-- Number Type -->
+                  <div class="pb-2">
+                    <label for="name" class="pb-1">Nömrə növləri*</label>
+                    <div class="flex justify-content-center">
+                      <p-dropdown
+                        [options]="numberType"
+                        optionLabel="name"
+                        formControlName="selectedType"
+                      >
+                      </p-dropdown>
+                    </div>
+                  </div>
+                  <!-- Numbers -->
+                  <div class="pb-2">
+                    <label for="">Nömrələr</label>
+                    <div class="p-field">
+                      <input type="text" pInputText formControlName="value" />
+                      <div class="d-flex justify-content-end">
+                        <button
+                          pButton
+                          type="button"
+                          icon="pi pi-minus"
+                          class="rmv-btn my-2"
+                          (click)="removeInput(i)"
+                          *ngIf="inputs.length > 1"
+                        >
+                          - Sil
+                        </button>
+                      </div>
+                    </div>
                   </div>
                 </div>
+              </div>
+              <!-- Add Button -->
+              <div class="d-flex justify-content-end">
+                <button
+                  pButton
+                  class="add-btn my-2"
+                  type="button"
+                  icon="pi pi-plus"
+                  (click)="addInput()"
+                >
+                  + Yeni nömrə
+                </button>
               </div>
             </div>
           </div>
-        </form>
-      </div>
-      <!--Legal  Forms-->
-      <div *ngIf="selectedPerson === 'legal-person'" class="pt-4">
-        <form [formGroup]="legalPersonForm"></form>
-      </div>
+          <div class="col-lg-6">
+            <div class="ps-5">
+              <!--Email-->
+              <div class="pb-2">
+                <label for="name" class="pb-1">Elektron-poçt</label>
+                <div>
+                  <input type="text" pInputText />
+                </div>
+              </div>
+
+              <!--Fealiyyete baslama tarixi-->
+              <div class="pb-2">
+                <label for="name" class="pb-1">Fəaliyyətə başlama tarixi</label>
+                <div class="w-100">
+                  <p-calendar
+                    class="w-100 m-0"
+                    [iconDisplay]="'input'"
+                    [showIcon]="true"
+                    inputId="icondisplay"
+                  />
+                </div>
+              </div>
+
+              <!-- Inception -->
+              <div class="pb-2">
+                <label for="name" class="pb-1">Əsas aparıcı müfəttişlik</label>
+                <div class="flex justify-content-center">
+                  <p-dropdown [options]="inception" optionLabel="name">
+                  </p-dropdown>
+                </div>
+              </div>
+
+              <!-- Activity type -->
+              <div class="pb-2">
+                <label for="name" class="pb-1">Fəaliyət növü</label>
+                <div class="flex justify-content-center">
+                  <p-dropdown [options]="acType" optionLabel="name">
+                  </p-dropdown>
+                </div>
+              </div>
+
+              <!-- Activity type 2 -->
+              <div class="pb-2">
+                <label for="name" class="pb-1">Fəaliyət tipi</label>
+                <div class="flex justify-content-center">
+                  <p-dropdown [options]="acType2" optionLabel="name">
+                  </p-dropdown>
+                </div>
+              </div>
+
+              <!--Note -->
+              <div class="pb-2">
+                <label for="name" class="pb-1">Qeyd</label>
+                <div class="flex justify-content-center">
+                  <textarea
+                    class="w-100"
+                    rows="3"
+                    cols="30"
+                    pInputTextarea
+                  ></textarea>
+                </div>
+              </div>
+
+              <!--Active-->
+              <div class="pb-2 d-flex">
+                <p-checkbox value="active" inputId="ny" />
+                <div class="ps-2"><label for="name">Aktiv</label></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <p>Ünvanlar</p>
+          <div class="address_info p-0 mx-2">
+            <div class="col-lg-6">
+              <div class="ps-3 pt-2">
+                <!-- Address type-->
+                <div class="pb-2">
+                  <label for="name" class="pb-1">Ünvanın tipi</label>
+                  <div class="flex justify-content-center">
+                    <p-dropdown [options]="addType" optionLabel="name">
+                    </p-dropdown>
+                  </div>
+                </div>
+                <!-- City -->
+                <div class="pb-2">
+                  <label for="name" class="pb-1">Şəhər</label>
+                  <div class="flex justify-content-center">
+                    <p-dropdown [options]="cities" optionLabel="name">
+                    </p-dropdown>
+                  </div>
+                </div>
+
+                <!--Kuce-->
+                <div class="pb-2">
+                  <label for="name" class="pb-1">Küçə</label>
+                  <div>
+                    <input type="text" pInputText />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6"></div>
+          </div>
+        </div>
+      </form>
+    </div>
+    <!--Legal  Forms-->
+    <div *ngIf="selectedPerson === 'legal-person'" class="pt-4">
+      <form [formGroup]="legalPersonForm"></form>
     </div>
   </div>
-  
+</div>
