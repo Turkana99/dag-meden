@@ -1,0 +1,117 @@
+<!--Individual Forms-->
+<form [formGroup]="individualPersonForm">
+  <div class="row new-individual-person pt-3">
+    <div class="col-lg-6">
+      <div class="pe-5">
+        <!--Name-->
+        <div class="pb-2">
+          <label for="name" class="pb-1">Ad*</label>
+          <div>
+            <input type="text" pInputText />
+          </div>
+        </div>
+
+        <!--Surname-->
+        <div class="pb-2">
+          <label for="name" class="pb-1">Soyad*</label>
+          <div>
+            <input type="text" pInputText />
+          </div>
+        </div>
+
+        <!--Dad name-->
+        <div class="pb-2">
+          <label for="name" class="pb-1">Ata adı*</label>
+          <div>
+            <input type="text" pInputText />
+          </div>
+        </div>
+
+        <!--FIN-->
+        <div class="pb-2">
+          <label for="FIN" class="pb-1">FIN*</label>
+          <input type="text" pInputText />
+        </div>
+
+        <!--Voen-->
+        <div class="pb-2">
+          <label for="name" class="pb-1">Vöen*</label>
+          <div>
+            <input type="text" pInputText />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-6">
+      <div class="ps-5">
+        <!--Email-->
+        <div class="pb-2">
+          <label for="name" class="pb-1">Elektron-poçt</label>
+          <div>
+            <input type="text" pInputText />
+          </div>
+        </div>
+
+        <!--Fealiyyete baslama tarixi-->
+        <div class="pb-2">
+          <label for="name" class="pb-1">Fəaliyyətə başlama tarixi</label>
+          <div class="w-100">
+            <p-calendar
+              class="w-100 m-0"
+              [iconDisplay]="'input'"
+              [showIcon]="true"
+              inputId="icondisplay"
+            />
+          </div>
+        </div>
+
+        <!-- Inception -->
+        <div class="pb-2">
+          <label for="name" class="pb-1">Əsas aparıcı müfəttişlik</label>
+          <div class="flex justify-content-center">
+            <p-dropdown [options]="inception" optionLabel="name"> </p-dropdown>
+          </div>
+        </div>
+
+        <!-- Activity type -->
+        <div class="pb-2">
+          <label for="name" class="pb-1">Fəaliyət növü</label>
+          <div class="flex justify-content-center">
+            <p-dropdown [options]="acType" optionLabel="name"> </p-dropdown>
+          </div>
+        </div>
+
+        <!-- Activity type 2 -->
+        <div class="pb-2">
+          <label for="name" class="pb-1">Fəaliyət tipi</label>
+          <div class="flex justify-content-center">
+            <p-dropdown [options]="acType2" optionLabel="name"> </p-dropdown>
+          </div>
+        </div>
+
+        <!--Note -->
+        <div class="pb-2">
+          <label for="name" class="pb-1">Qeyd</label>
+          <div class="flex justify-content-center">
+            <textarea
+              class="w-100"
+              rows="3"
+              cols="30"
+              pInputTextarea
+            ></textarea>
+          </div>
+        </div>
+
+        <!--Active-->
+        <div class="pb-2 d-flex">
+          <p-checkbox value="active" inputId="ny" />
+          <div class="ps-2"><label for="name">Aktiv</label></div>
+        </div>
+      </div>
+    </div>
+    <!-- Send Button -->
+    <div class="send d-flex justify-content-end w-100 p-0 m-0">
+      <button pButton class="add-btn my-3" type="button">Göndər</button>
+    </div>
+  </div>
+</form>

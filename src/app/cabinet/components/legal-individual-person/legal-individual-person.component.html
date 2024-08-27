@@ -5,7 +5,7 @@
       <p-button
         label="Əlavə et"
         icon="fa-solid fa-plus"
-        routerLink="/new-individual-person"
+        routerLink="/new-person"
       />
     </div>
   </div>
@@ -14,5 +14,12 @@
   <table-togglable-columns
     [dataSource]="ELEMENT_DATA"
     [displayedColumns]="displayedColumns"
+    [paginator]="true"
+    [editButton]="true"
+    editButtonText="düzəliş et"
+    [deleteButton]="true"
+    deleteButtonText="sil"
+    (onEdit)="logData($event)"
+    (onDelete)="logData($event)"
   ></table-togglable-columns>
 </div>

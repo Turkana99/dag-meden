@@ -1,5 +1,7 @@
-@import "../../../../styles/variables.scss";
-.new-individual-person {
+@import "../../../../../styles/variables.scss";
+
+.new-legal-person {
+  overflow-y: auto !important;
   font-family: "Poppins", sans-serif !important;
   h1 {
     font-size: 30px;
@@ -11,6 +13,7 @@
     width: 100%;
   }
   label {
+    font-size: 13px!important;
     font-family: "Poppins", sans-serif;
     padding: 5px 0px;
   }
@@ -18,7 +21,7 @@
   ::ng-deep .p-calendar,
   ::ng-deep .p-dropdown-label {
     width: 100% !important;
-    font-size: 14px !important;
+    font-size: 13px !important;
     font-family: "Poppins", sans-serif !important;
     ul {
       padding: 0px !important;

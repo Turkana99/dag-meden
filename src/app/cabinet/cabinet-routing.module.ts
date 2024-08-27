@@ -9,8 +9,10 @@ import { FeauturesComponent } from './components/feautures/feautures.component';
 import { StatisticsComponent } from './components/statistics/statistics.component';
 import { SettingsComponent } from './components/settings/settings.component';
 import { RegisterDocsComponent } from './components/register-docs/register-docs.component';
-import { NewIndividualPersonComponent } from './components/new-individual-person/new-individual-person.component';
-import { TestComponent } from './components/test/test.component';
+import { NewIndividualPersonComponent } from './components/new-person/new-individual-person/new-individual-person.component';
+import { NewPersonComponent } from './components/new-person/new-person/new-person.component';
+import { NewLegalPersonComponent } from './components/new-person/new-legal-person/new-legal-person.component';
+
 const routes: Routes = [
   {
     path: '',
@@ -58,9 +60,13 @@ const routes: Routes = [
         component: NewIndividualPersonComponent,
       },
       {
-        path: 'test',
-        component: TestComponent,
+        path: 'new-person',
+        component: NewPersonComponent,
       },
+      {
+        path: 'new-legal-person',
+        component: NewLegalPersonComponent,
+      }
     ],
   },
 ];

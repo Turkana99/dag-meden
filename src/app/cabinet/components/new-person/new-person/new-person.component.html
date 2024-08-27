@@ -1,0 +1,205 @@
+<div class="new-person px-3">
+  <h1 class="pt-3">Yeni Hüquqi(Fiziki) şəxs əlavəsi</h1>
+  <p-tabView>
+    <p-tabPanel header="Şəxs məlumamatları">
+      <div class="person-type pb-1">
+        <!--Radio Button-->
+        <div class="d-flex gap-3">
+          <div class="d-flex align-items-center justify-content-center">
+            <p-radioButton
+              name="person"
+              value="individual-person"
+              inputId="person1"
+              [(ngModel)]="selectedPerson"
+            ></p-radioButton>
+            <label for="person1" class="ml-2 ps-2">Fiziki şəxs</label>
+          </div>
+
+          <div class="d-flex align-items-center justify-content-center">
+            <p-radioButton
+              name="person"
+              value="legal-person"
+              inputId="person2"
+              [(ngModel)]="selectedPerson"
+            ></p-radioButton>
+            <label for="person2" class="ml-2 ps-2">Hüquqi şəxs</label>
+          </div>
+        </div>
+      </div>
+      <app-new-individual-person
+        *ngIf="selectedPerson === 'individual-person'"
+      ></app-new-individual-person>
+      <app-new-legal-person
+        *ngIf="selectedPerson === 'legal-person'"
+      ></app-new-legal-person>
+    </p-tabPanel>
+    <p-tabPanel header="Telefon məlumatları">
+      <!-- Number Type and Numbers -->
+      <form [formGroup]="phoneForm">
+        <div formArrayName="inputs">
+          <div
+            *ngFor="let input of inputs.controls; let i = index"
+            [formGroupName]="i"
+            class="pb-2"
+          >
+            <!-- Number Type -->
+            <div class="pb-2">
+              <label for="name" class="pb-1">Nömrə növləri*</label>
+              <div class="flex justify-content-center">
+                <p-dropdown
+                  [options]="numberType"
+                  optionLabel="name"
+                  formControlName="selectedType"
+                >
+                </p-dropdown>
+              </div>
+            </div>
+            <!-- Numbers -->
+            <div class="pb-2">
+              <label for="">Nömrələr</label>
+              <div class="p-field">
+                <input type="text" pInputText formControlName="value" />
+                <div class="d-flex justify-content-end">
+                  <button
+                    pButton
+                    type="button"
+                    icon="pi pi-minus"
+                    class="rmv-btn my-2"
+                    (click)="removeInput(i)"
+                    *ngIf="inputs.length > 1"
+                  >
+                    - Sil
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Add Button -->
+          <div class="d-flex justify-content-end">
+            <button
+              pButton
+              class="add-btn my-2"
+              type="button"
+              icon="pi pi-plus"
+              (click)="addInput()"
+            >
+              + Yeni nömrə
+            </button>
+          </div>
+          <!-- Send Button -->
+          <div class="send d-flex justify-content-end w-100 p-0 m-0">
+            <button pButton class="add-btn my-3" type="button">Göndər</button>
+          </div>
+        </div>
+      </form>
+    </p-tabPanel>
+    <p-tabPanel header="Ünvan məlumatları">
+      <div class="row px-0 mx-0">
+        <!-- Address Blocks -->
+        <div class="p-0 m-0">
+          <form [formGroup]="addressForm">
+            <div formArrayName="addresses">
+              <div
+                *ngFor="let address of addresses.controls; let i = index"
+                [formGroupName]="i"
+                class="w-100 address_info row py-3"
+              >
+                <!-- Address Type -->
+                <div class="col-lg-6">
+                  <div class="pb-2">
+                    <label for="name" class="pb-1">Ünvanın tipi</label>
+                    <div class="flex justify-content-center">
+                      <p-dropdown
+                        [options]="addType"
+                        optionLabel="name"
+                        formControlName="addressType"
+                      ></p-dropdown>
+                    </div>
+                  </div>
+
+                  <!-- City -->
+                  <div class="pb-2">
+                    <label for="name" class="pb-1">Şəhər</label>
+                    <div class="flex justify-content-center">
+                      <p-dropdown
+                        [options]="cities"
+                        optionLabel="name"
+                        formControlName="city"
+                      ></p-dropdown>
+                    </div>
+                  </div>
+
+                  <!-- Other Address Fields -->
+                  <div class="pb-2">
+                    <label for="name" class="pb-1">Küçə</label>
+                    <input type="text" pInputText formControlName="street" />
+                  </div>
+                  <div class="pb-2">
+                    <label for="name" class="pb-1">Kənd/qəsəbə</label>
+                    <div class="flex justify-content-center">
+                      <p-dropdown
+                        [options]="addType"
+                        optionLabel="name"
+                        formControlName="village"
+                      ></p-dropdown>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-lg-6">
+                  <div class="pb-2">
+                    <label for="name" class="pb-1">Ev(bina)</label>
+                    <input type="text" pInputText formControlName="building" />
+                  </div>
+                  <div class="pb-2">
+                    <label for="name" class="pb-1">Poçt indeksi</label>
+                    <input
+                      type="text"
+                      pInputText
+                      formControlName="postalCode"
+                    />
+                  </div>
+                  <div class="pb-2">
+                    <label for="name" class="pb-1">Mənzil</label>
+                    <input type="text" pInputText formControlName="apartment" />
+                  </div>
+                </div>
+
+                <!-- Remove Address Block Button -->
+                <div class="d-flex justify-content-end">
+                  <button
+                    pButton
+                    type="button"
+                    icon="pi pi-minus"
+                    class="rmv-btn my-2"
+                    (click)="removeAddressBlock(i)"
+                    *ngIf="addresses.length > 1"
+                  >
+                    - Sil
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Add Address Block Button -->
+            <div class="d-flex justify-content-end">
+              <button
+                pButton
+                class="add-btn my-2"
+                type="button"
+                icon="pi pi-plus"
+                (click)="addAddressBlock()"
+              >
+                + Yeni ünvan
+              </button>
+            </div>
+            <!-- Send Button -->
+            <div class="send d-flex justify-content-end w-100 p-0 m-0">
+              <button pButton class="add-btn my-3" type="button">Göndər</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </p-tabPanel>
+  </p-tabView>
+</div>

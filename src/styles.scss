@@ -106,14 +106,15 @@ body {
 
 /*Scroll style start*/
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 3px;
+  height: 5px;
 }
 ::-webkit-scrollbar-thumb {
-  background-color: $main-color;
-  border-radius: 6px;
+  background-color: #F2F2F2;
+  border-radius: 8px;
 }
 ::-webkit-scrollbar-track {
-  background-color: #f1f1f1;
+  background-color: white;
 }
 /*Scroll style end*/
 

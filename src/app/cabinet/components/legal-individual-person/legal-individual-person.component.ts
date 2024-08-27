@@ -41,16 +41,9 @@ export class LegalIndividualPersonComponent {
     {
       key:'note',
       name:'Qeyd'
-    },
-    {
-      key:'edit',
-      name:''
-    },
-    {
-      key:'delete',
-      name:''
     }
   ];
+
   ELEMENT_DATA: any = [
     {
       person: 'Məmmədov Nazim Mürvət',
@@ -161,4 +154,8 @@ export class LegalIndividualPersonComponent {
       note: 'xxxxxxxxxxxxxxxxxxxx',
     },
   ];
+
+  logData($event: any) {
+    console.log('event', $event);
+  }
 }

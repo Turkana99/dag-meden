@@ -1,0 +1,135 @@
+<!--Legal  Forms-->
+<form [formGroup]="legalPersonForm">
+  <div class="new-legal-person pt-3 row">
+    <div class="col-lg-6">
+      <div class="pe-5">
+        <!--Name-->
+        <div class="pb-2">
+          <label for="name" class="pb-1">Hüquqi şəxsin adı*</label>
+          <div>
+            <input type="text" pInputText />
+          </div>
+        </div>
+
+        <!-- Teskilati-forma -->
+        <div class="pb-2">
+          <label for="name" class="pb-1">Təşkilati hüquqi forması</label>
+          <div class="flex justify-content-center">
+            <p-dropdown [options]="cities" optionLabel="name"></p-dropdown>
+          </div>
+        </div>
+
+        <!--Voen-->
+        <div class="pb-2">
+          <label for="name" class="pb-1">Vöen*</label>
+          <div>
+            <input type="text" pInputText />
+          </div>
+        </div>
+
+        <!--Rehber ad-->
+        <div class="pb-2">
+          <label for="name" class="pb-1">Rəhbərin adı*</label>
+          <div>
+            <input type="text" pInputText />
+          </div>
+        </div>
+
+        <!--Rehber soyad-->
+        <div class="pb-2">
+          <label for="name" class="pb-1">Rəhbərin soyadı*</label>
+          <div>
+            <input type="text" pInputText />
+          </div>
+        </div>
+
+        <!--Rehber ata ad-->
+        <div class="pb-2">
+          <label for="name" class="pb-1">Rəhbərin ata adı*</label>
+          <div>
+            <input type="text" pInputText />
+          </div>
+        </div>
+
+        <!-- Activity type -->
+        <div class="pb-2">
+          <label for="name" class="pb-1">Fəaliyət növü</label>
+          <div class="flex justify-content-center">
+            <p-dropdown [options]="acType" optionLabel="name"> </p-dropdown>
+          </div>
+        </div>
+
+        <!-- Activity type 2 -->
+        <div class="pb-2">
+          <label for="name" class="pb-1">Fəaliyət tipi</label>
+          <div class="flex justify-content-center">
+            <p-dropdown [options]="acType2" optionLabel="name"> </p-dropdown>
+          </div>
+        </div>
+
+        <!--Active-->
+        <div class="pb-2 d-flex">
+          <p-checkbox value="active" inputId="ny" />
+          <div class="ps-2"><label for="name">Aktiv</label></div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-6">
+      <div class="pe-5">
+        <!-- Mulkiyyet novu -->
+        <div class="pb-2">
+          <label for="name" class="pb-1">Mülkiyyət növü</label>
+          <div class="flex justify-content-center">
+            <p-dropdown [options]="acType2" optionLabel="name"> </p-dropdown>
+          </div>
+        </div>
+
+        <!--Fealiyyete baslama tarixi-->
+        <div class="pb-2">
+          <label for="name" class="pb-1">Fəaliyyətə başlama tarixi</label>
+          <div class="w-100">
+            <p-calendar
+              class="w-100 m-0"
+              [iconDisplay]="'input'"
+              [showIcon]="true"
+              inputId="icondisplay"
+            />
+          </div>
+        </div>
+
+        <!-- Inception -->
+        <div class="pb-2">
+          <label for="name" class="pb-1">Əsas aparıcı müfəttişlik</label>
+          <div class="flex justify-content-center">
+            <p-dropdown [options]="inception" optionLabel="name"> </p-dropdown>
+          </div>
+        </div>
+
+        <!--Email-->
+        <div class="pb-2">
+          <label for="name" class="pb-1">Elektron-poçt</label>
+          <div>
+            <input type="text" pInputText />
+          </div>
+        </div>
+
+        <!--Note -->
+        <div class="pb-2">
+          <label for="name" class="pb-1">Qeyd</label>
+          <div class="flex justify-content-center">
+            <textarea
+              class="w-100"
+              rows="3"
+              cols="30"
+              pInputTextarea
+            ></textarea>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Send Button -->
+    <div class="send d-flex justify-content-end w-100 p-0 m-0">
+      <button pButton class="add-btn my-3" type="button">Göndər</button>
+    </div>
+  </div>
+</form>
